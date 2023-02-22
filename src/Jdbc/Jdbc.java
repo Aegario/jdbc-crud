@@ -1,4 +1,4 @@
-package JDBC;
+package Jdbc;
 
 import java.sql.*;
 
@@ -7,12 +7,12 @@ enum Sex {
     F,
 }
 
-public class JDBC {
+public class Jdbc {
     private static String DB_URI = "jdbc:postgresql://localhost:5432/jdbc-test";
     private static Connection conn;
     private static Statement stmt;
 
-    static {
+    public Jdbc() {
         try {
             conn = DriverManager.getConnection(DB_URI);
             stmt = conn.createStatement();
@@ -22,7 +22,7 @@ public class JDBC {
     }
 
     public static void main(String[] args) {
-        JDBC jdbcInstance = new JDBC();
+        Jdbc jdbcInstance = new Jdbc();
         // jdbcInstance.createNewClient("Donald", 24, Sex.M);
         //  jdbcInstance.getClient(3);
         jdbcInstance.closeConnections();
